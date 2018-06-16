@@ -7,7 +7,7 @@ $("ul").on("click", "span", function(){
 	$(this).parent().fadeOut(3000 , function(){
 		$(this).remove();
 	});
-	alert("Clicked the span");
+	
 	event.stopPropagation();	
 
 });
@@ -16,12 +16,14 @@ $("ul").on("click", "span", function(){
 $("#input").keypress(function(event){
 if(event.which === 13){
 	var todoText = $(this).val();
-	$("ul").append("<li><span>X</span> " +todoText+ "</li>");
+	$("ul").append("<li><span><i class='fa fa-trash'></i></span> " +todoText+ "</li>");
 	$(this).val("");
 }
 });
 
-
+$(".fa-plus").click(function(){
+	$("#input").fadeToggle(2000);
+});
 
 
 
